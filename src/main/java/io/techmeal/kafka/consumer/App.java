@@ -19,7 +19,7 @@ public class App {
 	private static String groupId;
 	
     public static void main( String[] args ) throws IOException {
-    	init();
+    	setup();
     	KafkaConsumerConfig config = new KafkaConsumerConfig();
     	config.setBootstrapServer(kafkaServer);
     	config.setGroupId(groupId);
@@ -28,7 +28,7 @@ public class App {
         consumer.init();
     }
 
-	private static void init() throws IOException {
+	private static void setup() throws IOException {
 		InputStream is = App.class.getClassLoader().getResourceAsStream("kafka.properties");
     	Properties props = new Properties();
     	props.load(is);
