@@ -10,7 +10,7 @@ import java.util.Properties;
  * Hello world!
  *
  */
-public class App {
+public class KafkaConsumerApplication {
 	private static final String KAFKA_CONSUMER_TOPICS = "consumer.topics";
 	private static final String KAFKA_CONSUMER_GROUP_ID = "consumer.group.id";
 	private static final String KAFKA_SERVER = "kafka.server";
@@ -29,7 +29,7 @@ public class App {
     }
 
 	private static void setup() throws IOException {
-		InputStream is = App.class.getClassLoader().getResourceAsStream("kafka.properties");
+		InputStream is = KafkaConsumerApplication.class.getClassLoader().getResourceAsStream("kafka.properties");
     	Properties props = new Properties();
     	props.load(is);
     	kafkaServer = (String) props.get(KAFKA_SERVER);
